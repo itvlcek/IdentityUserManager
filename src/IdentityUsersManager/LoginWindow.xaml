@@ -1,0 +1,48 @@
+﻿<Window x:Class="IdentityUsersManager.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"       
+        xmlns:local="clr-namespace:IdentityUsersManager"
+        mc:Ignorable="d"
+        Title="Přihlášení" Height="300" Width="300" BorderBrush="#FF009BC9" WindowStartupLocation="CenterScreen" BorderThickness="3,3,1,1" WindowStyle="SingleBorderWindow" >
+    <Window.Resources>
+        <SolidColorBrush x:Key="Blue" Color="#FF0B90DC"/>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="30*"></ColumnDefinition>
+            <ColumnDefinition Width="70*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label VerticalAlignment="Center" Content="Server:"></Label>
+        <telerik:RadComboBox Grid.Column="1" Name="comboBoxServer" Height="30" SelectionChanged="comboBoxServer_SelectionChanged" IsEditable="True"  VerticalAlignment="Center">            
+        </telerik:RadComboBox>
+       
+        <Label VerticalAlignment="Center" Grid.Row="1" Content="Databáze:"></Label>
+        <telerik:RadComboBox Grid.Column="1" Name="comboBoxDatabase" Grid.Row="1" Height="30" IsEditable="True" SelectionChanged="comboBoxDatabase_SelectionChanged" VerticalAlignment="Center">
+
+        </telerik:RadComboBox>
+        <Label VerticalAlignment="Center" Grid.Row="2" Content="Login:"></Label>
+        <telerik:RadComboBox Grid.Column="1" Name="comboBoxLogin" Grid.Row="2" Height="30" IsEditable="True" SelectionChanged="comboBoxLogin_SelectionChanged" VerticalAlignment="Center">
+
+        </telerik:RadComboBox>
+
+
+        <Label VerticalAlignment="Center" Grid.Row="3" Content="Heslo:"></Label>
+        <PasswordBox Grid.Column="1" Name="txtPassword" Grid.Row="3" Height="30"  VerticalAlignment="Center">
+
+        </PasswordBox>
+
+        <CheckBox Grid.Row="4" Grid.Column="1" Content="Zapamatovat" Name="checkBoxRemember" VerticalAlignment="Center"></CheckBox>
+        <telerik:RadButton HorizontalAlignment="Center" VerticalAlignment="Center" Content="Přihlásit" Name="loginBtn" Click="loginBtn_Click" Grid.ColumnSpan="2" Grid.Row="5" Padding="10"></telerik:RadButton>
+    </Grid>
+</Window>
